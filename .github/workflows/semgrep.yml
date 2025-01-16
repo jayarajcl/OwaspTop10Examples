@@ -1,24 +1,15 @@
-# This workflow uses actions that are not certified by GitHub.
-# They are provided by a third-party and are governed by
-# separate terms of service, privacy policy, and support
-# documentation.
-
-# This workflow file requires a free account on Semgrep.dev to
-# manage rules, file ignores, notifications, and more.
-#
-# See https://semgrep.dev/docs
-
-name: Semgrep
-
 on:
-workflow_dispatch: {}
   push:
     branches: [ "master" ]
+
   pull_request:
     # The branches below must be a subset of the branches above
     branches: [ "master" ]
+
   schedule:
     - cron: '29 16 * * 2'
+
+  workflow_dispatch: # Allow manual triggering of the workflow
 
 permissions:
   contents: read
